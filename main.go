@@ -35,9 +35,10 @@ func MovieShow(w http.ResponseWriter, r *http.Request) {
 
 func MovieList(w http.ResponseWriter, r *http.Request) {
 	movies := Movies{
-		Movie{"Pelicula 1", 2017, "director 1"},
-		Movie{"Pelicula 2", 2017, "director 2"},
-		Movie{"Pelicula 3", 2017, "director 3"},
+		Movie{name: "Pelicula 1", year: 2017, director: "director 1"},
+		Movie{name: "Pelicula 2", year: 2017, director: "director 2"},
+		Movie{name: "Pelicula 3", year: 2017, director: "director 3"},
 	}
+	fmt.Println(movies)
 	json.NewEncoder(w).Encode(movies)
 }
